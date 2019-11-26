@@ -72,7 +72,7 @@ public class Manager extends User {
 		}
 		} while (b == false);
 		if (ans == 1) {
-			//method FIXME
+			getQ2RESULTS();
 		} else if (ans == 2) {
 			//method FIXME
 		} else if (ans == 31) {
