@@ -38,10 +38,6 @@ public class Manager extends User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
-	public static ArrayList<Manager> getManagers() {
-		return managers;
-	}
 	
 	/** Showing the menu and also getting answer from the user-manager to calculate
 	 * some of the given choices for statistic reasons.
@@ -80,7 +76,7 @@ public class Manager extends User {
 		} else if (ans == 2) {
 			//method FIXME
 		} else if (ans == 31) {
-			getQ2RESULTS();//method FIX ME
+			getQ2RESULTS();
 		} else if (ans == 32) {
 			//method FIXME
 		} else if (ans == 33) {
