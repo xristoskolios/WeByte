@@ -93,7 +93,7 @@ public class Manager extends User {
 		sc.close();
 	}
 
-	//** Method to calculate the effectiveness of Mobile from answer sheet(ArrayList) from Questionnaire's field q2.
+	//** Method to calculate the effectiveness of Mobile from answer sheet(ArrayList) from Questionnaire's field q2.*/
 	public static void getQ2RESULTS() {
 		System.out.println("---The effectiveness of mobile---");
 		int a1 = 0,a2 = 0,a3 = 0,a4 = 0,a5 = 0; //ANSWERS 1,2,3,4,5 FROM QUESTION 2 OF THE QUESTIONNAIRE
