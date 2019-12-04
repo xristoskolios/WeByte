@@ -39,6 +39,7 @@ public class Manager extends User {
 		this.password = password;
 	}
 	
+	
 	/** Showing the menu and also getting answer from the user-manager to calculate
 	 * some of the given choices for statistic reasons.
 	 */
@@ -88,9 +89,28 @@ public class Manager extends User {
 		}
 		sc.close();
 	}
-
+	
+	//** Log-in method for the Managers.*/
+	public void login() {
+		System.out.println("~~~LOGIN AS MANAGER~~~");
+		while (false) {
+			Scanner in = new Scanner(System.in);
+			System.out.println("Please insert your email.");
+			String em = in.nextLine();
+			System.out.println("Please insert your password.");
+			String pw = in.nextLine();
+			for (Manager i: managers) {
+				if (em.equals(i.getEmail()) && pw.equals(i.getPassword())) {
+					System.out.println("Log in done successfully.");
+					this.getMenu();
+				}	
+			}
+			System.out.println("Wrong email or/and password.Please try again.");
+		}
+	}
+	
 	//** Method to calculate the effectiveness of Mobile from answer sheet(ArrayList) from Questionnaire's field q2.*/
-	public static void getQ2RESULTS() {
+	public static void getQ2Results() {
 		System.out.println("---The effectiveness of mobile---");
 		int a1 = 0,a2 = 0,a3 = 0,a4 = 0,a5 = 0; //ANSWERS 1,2,3,4,5 FROM QUESTION 2 OF THE QUESTIONNAIRE
 		for (Questionnaire k: Questionnaire.Qs) {
