@@ -93,7 +93,7 @@ public class Manager extends User {
 	//** Log-in method for the Managers.*/
 	public void login() {
 		System.out.println("~~~LOGIN AS MANAGER~~~");
-		while (false) {
+		while (true) {
 			Scanner in = new Scanner(System.in);
 			System.out.println("Please insert your email.");
 			String em = in.nextLine();
