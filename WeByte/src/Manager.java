@@ -77,7 +77,7 @@ public class Manager extends User {
 		} else if (ans == 2) {
 			//method FIXME
 		} else if (ans == 31) {
-			getQ2RESULTS();
+			getQ2Results();
 		} else if (ans == 32) {
 			//method FIXME
 		} else if (ans == 33) {
