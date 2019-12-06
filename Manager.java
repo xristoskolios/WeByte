@@ -158,37 +158,4 @@ public class Manager extends User {
 		}
 	}
 	
-	//** Method to calculate the Quality of the Satellite TV from answer sheet(ArrayList) from Questionnaire's field q4.*/
-		public static void getSateliteTVQResults() {
-			System.out.println("---The Quality of the Satellite TV---");
-			int a1 = 0,a2 = 0,a3 = 0,a4 = 0,a5 = 0; //ANSWERS 1,2,3,4,5 FROM QUESTION 4 OF THE QUESTIONNAIRE
-			for (Questionnaire k: Questionnaire.Qs) {
-				if (k.q4 == 1) {
-					a1++;
-				} else if (k.q4 == 2) {
-					a2++;
-				} else if (k.q4 == 3) {
-					a3++;
-				} else if (k.q4 == 4) {
-					a4++;
-				} else { // k.q4 == 5, definitely q4 must be either 1 either 2 either 3 either 4 either 5.
-					a5++;
-				}
-			}
-			int n = Questionnaire.n; //Number of questionnaires done.
-			if (n>0) {
-				double p1 = (double) a1/n; //Rate of answer 1
-				double p2 = (double) a2/n; //Rate of answer 2
-				double p3 = (double) a3/n; //Rate of answer 3
-				double p4 = (double) a4/n; //Rate of answer 4
-				double p5 = (double) a5/n; //Rate of answer 5
-				System.out.printf("The rate of answer 1 is: %.2f%%" + p1 + ".\n");
-				System.out.printf("The rate of answer 2 is: %.2f%%" + p2 + ".\n");
-				System.out.printf("The rate of answer 3 is: %.2f%%" + p3 + ".\n");
-				System.out.printf("The rate of answer 4 is: %.2f%%" + p4 + ".\n");
-				System.out.printf("The rate of answer 5 is: %.2f%%" + p5 + ".\n");
-			} else { //No questionnaires done by any Customer.
-				System.out.println("No questionnaires have been done yet.");
-			}
-		}
 }
