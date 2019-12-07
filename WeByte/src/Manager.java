@@ -48,10 +48,10 @@ public class Manager extends User {
 		System.out.println("Welcome, Mr/Ms." + this.getName() + "\n"
 				+ "Please insert 1 for loyal customers.\n"
 				+ "Please insert 2 for customers who are most likely to be lost.\n"
-				+ "Please insert 31 for effectiveness of Mobile.\n"
-				+ "Please insert 32 for effectiveness of Internet.\n"
-				+ "Please insert 33 for effectiveness of Satelite TV.\n"
-				+ "Please insert 34 for effectiveness of Customer Service.\n"
+				+ "Please insert 31 for the Quality of Mobile Services.\n"
+				+ "Please insert 32 for the Quality of the Internet.\n"
+				+ "Please insert 33 for the Quality of the Satellite TV.\n"
+				+ "Please insert 34 for the Quality of Customer Service.\n"
 				+ "Please insert 4 for Questionnaire evaluation.");
 		Scanner sc = new Scanner(System.in);
 		int ans = 0;	//Managers's given answer from the keyboard using class Scanner.
@@ -79,9 +79,9 @@ public class Manager extends User {
 		} else if (ans == 31) {
 			getQ2Results();
 		} else if (ans == 32) {
-			//method FIXME
+			getInternetQResults();
 		} else if (ans == 33) {
-			//method FIXME
+			getSateliteTVQResults();
 		} else if (ans == 34) {
 			//method FIXME
 		} else if (ans == 4) {
@@ -109,9 +109,9 @@ public class Manager extends User {
 		}
 	}
 	
-	//** Method to calculate the effectiveness of Mobile from answer sheet(ArrayList) from Questionnaire's field q2.*/
+	//** Method to calculate the Quality of Mobile Services from answer sheet(ArrayList) from Questionnaire's field q2.*/
 	public static void getQ2Results() {
-		System.out.println("---The effectiveness of mobile---");
+		System.out.println("---The Quality of Mobile Services---");
 		int a1 = 0,a2 = 0,a3 = 0,a4 = 0,a5 = 0; //ANSWERS 1,2,3,4,5 FROM QUESTION 2 OF THE QUESTIONNAIRE
 		for (Questionnaire k: Questionnaire.Qs) {
 			if (k.q2 == 1) {
@@ -144,36 +144,69 @@ public class Manager extends User {
 		}
 	}
 	//** Method to calculate the Quality of the Internet from answer sheet(ArrayList) from Questionnaire's field q3.*/
-		public static void getInternetQResults() {
-			System.out.println("---The Quality of the Internet---");
-			int a1 = 0,a2 = 0,a3 = 0,a4 = 0,a5 = 0; //ANSWERS 1,2,3,4,5 FROM QUESTION 3 OF THE QUESTIONNAIRE
-			for (Questionnaire k: Questionnaire.Qs) {
-				if (k.q3 == 1) {
-					a1++;
-				} else if (k.q3 == 2) {
-					a2++;
-				} else if (k.q3 == 3) {
-					a3++;
-				} else if (k.q3 == 4) {
-					a4++;
-				} else { // k.q3 == 5, definitely q3 must be either 1 either 2 either 3 either 4 either 5.
-					a5++;
-				}
-			}
-			int n = Questionnaire.n; //Number of questionnaires done.
-			if (n>0) {
-				double p1 = (double) a1/n; //Rate of answer 1
-				double p2 = (double) a2/n; //Rate of answer 2
-				double p3 = (double) a3/n; //Rate of answer 3
-				double p4 = (double) a4/n; //Rate of answer 4
-				double p5 = (double) a5/n; //Rate of answer 5
-				System.out.printf("The rate of answer 1 is: %.2f%%" + p1 + ".\n");
-				System.out.printf("The rate of answer 2 is: %.2f%%" + p2 + ".\n");
-				System.out.printf("The rate of answer 3 is: %.2f%%" + p3 + ".\n");
-				System.out.printf("The rate of answer 4 is: %.2f%%" + p4 + ".\n");
-				System.out.printf("The rate of answer 5 is: %.2f%%" + p5 + ".\n");
-			} else { //No questionnaires done by any Customer.
-				System.out.println("No questionnaires have been done yet.");
+	public static void getInternetQResults() {
+		System.out.println("---The Quality of the Internet---");
+		int a1 = 0,a2 = 0,a3 = 0,a4 = 0,a5 = 0; //ANSWERS 1,2,3,4,5 FROM QUESTION 3 OF THE QUESTIONNAIRE
+		for (Questionnaire k: Questionnaire.Qs) {
+			if (k.q3 == 1) {
+				a1++;
+			} else if (k.q3 == 2) {
+				a2++;
+			} else if (k.q3 == 3) {
+				a3++;
+			} else if (k.q3 == 4) {
+				a4++;
+			} else { // k.q3 == 5, definitely q3 must be either 1 either 2 either 3 either 4 either 5.
+				a5++;
 			}
 		}
+		int n = Questionnaire.n; //Number of questionnaires done.
+		if (n>0) {
+			double p1 = (double) a1/n; //Rate of answer 1
+			double p2 = (double) a2/n; //Rate of answer 2
+			double p3 = (double) a3/n; //Rate of answer 3
+			double p4 = (double) a4/n; //Rate of answer 4
+			double p5 = (double) a5/n; //Rate of answer 5
+			System.out.printf("The rate of answer 1 is: %.2f%%" + p1 + ".\n");
+			System.out.printf("The rate of answer 2 is: %.2f%%" + p2 + ".\n");
+			System.out.printf("The rate of answer 3 is: %.2f%%" + p3 + ".\n");
+			System.out.printf("The rate of answer 4 is: %.2f%%" + p4 + ".\n");
+			System.out.printf("The rate of answer 5 is: %.2f%%" + p5 + ".\n");
+		} else { //No questionnaires done by any Customer.
+			System.out.println("No questionnaires have been done yet.");
+		}
+	}
+	//** Method to calculate the Quality of the Satellite TV from answer sheet(ArrayList) from Questionnaire's field q4.*/
+	public static void getSateliteTVQResults() {
+		System.out.println("---The Quality of the Satellite TV---");
+		int a1 = 0,a2 = 0,a3 = 0,a4 = 0,a5 = 0; //ANSWERS 1,2,3,4,5 FROM QUESTION 4 OF THE QUESTIONNAIRE
+		for (Questionnaire k: Questionnaire.Qs) {
+			if (k.q4 == 1) {
+				a1++;
+			} else if (k.q4 == 2) {
+				a2++;
+			} else if (k.q4 == 3) {
+				a3++;
+			} else if (k.q4 == 4) {
+				a4++;
+			} else { // k.q4 == 5, definitely q4 must be either 1 either 2 either 3 either 4 either 5.
+				a5++;
+			}
+		}
+		int n = Questionnaire.n; //Number of questionnaires done.
+		if (n>0) {
+			double p1 = (double) a1/n; //Rate of answer 1
+			double p2 = (double) a2/n; //Rate of answer 2
+			double p3 = (double) a3/n; //Rate of answer 3
+			double p4 = (double) a4/n; //Rate of answer 4
+			double p5 = (double) a5/n; //Rate of answer 5
+			System.out.printf("The rate of answer 1 is: %.2f%%" + p1 + ".\n");
+			System.out.printf("The rate of answer 2 is: %.2f%%" + p2 + ".\n");
+			System.out.printf("The rate of answer 3 is: %.2f%%" + p3 + ".\n");
+			System.out.printf("The rate of answer 4 is: %.2f%%" + p4 + ".\n");
+			System.out.printf("The rate of answer 5 is: %.2f%%" + p5 + ".\n");
+		} else { //No questionnaires done by any Customer.
+			System.out.println("No questionnaires have been done yet.");
+		}
+	}
 }
