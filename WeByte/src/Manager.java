@@ -129,11 +129,11 @@ public class Manager extends User {
 		int n = Questionnaire.n; //Number of questionnaires done.
 		//Otherwise int n = Questionnaire.Qs.length;
 		if (n>0) {
-			double p1 = (double) a1/n; //Rate of answer 1
-			double p2 = (double) a2/n; //Rate of answer 2
-			double p3 = (double) a3/n; //Rate of answer 3
-			double p4 = (double) a4/n; //Rate of answer 4
-			double p5 = (double) a5/n; //Rate of answer 5
+			double p1 = (double) 100*a1/n; //Rate of answer 1
+			double p2 = (double) 100*a2/n; //Rate of answer 2
+			double p3 = (double) 100*a3/n; //Rate of answer 3
+			double p4 = (double) 100*a4/n; //Rate of answer 4
+			double p5 = (double) 100*a5/n; //Rate of answer 5
 		System.out.printf("The rate of asnwer 1 is: %.2f%%" + p1 + ".\n");
 		System.out.printf("The rate of asnwer 2 is: %.2f%%" + p2 + ".\n");
 		System.out.printf("The rate of asnwer 3 is: %.2f%%" + p3 + ".\n");
@@ -162,11 +162,11 @@ public class Manager extends User {
 		}
 		int n = Questionnaire.n; //Number of questionnaires done.
 		if (n>0) {
-			double p1 = (double) a1/n; //Rate of answer 1
-			double p2 = (double) a2/n; //Rate of answer 2
-			double p3 = (double) a3/n; //Rate of answer 3
-			double p4 = (double) a4/n; //Rate of answer 4
-			double p5 = (double) a5/n; //Rate of answer 5
+			double p1 = (double) 100*a1/n; //Rate of answer 1
+			double p2 = (double) 100*a2/n; //Rate of answer 2
+			double p3 = (double) 100*a3/n; //Rate of answer 3
+			double p4 = (double) 100*a4/n; //Rate of answer 4
+			double p5 = (double) 100*a5/n; //Rate of answer 5
 			System.out.printf("The rate of answer 1 is: %.2f%%" + p1 + ".\n");
 			System.out.printf("The rate of answer 2 is: %.2f%%" + p2 + ".\n");
 			System.out.printf("The rate of answer 3 is: %.2f%%" + p3 + ".\n");
@@ -195,11 +195,11 @@ public class Manager extends User {
 		}
 		int n = Questionnaire.n; //Number of questionnaires done.
 		if (n>0) {
-			double p1 = (double) a1/n; //Rate of answer 1
-			double p2 = (double) a2/n; //Rate of answer 2
-			double p3 = (double) a3/n; //Rate of answer 3
-			double p4 = (double) a4/n; //Rate of answer 4
-			double p5 = (double) a5/n; //Rate of answer 5
+			double p1 = (double) 100*a1/n; //Rate of answer 1
+			double p2 = (double) 100*a2/n; //Rate of answer 2
+			double p3 = (double) 100*a3/n; //Rate of answer 3
+			double p4 = (double) 100*a4/n; //Rate of answer 4
+			double p5 = (double) 100*a5/n; //Rate of answer 5
 			System.out.printf("The rate of answer 1 is: %.2f%%" + p1 + ".\n");
 			System.out.printf("The rate of answer 2 is: %.2f%%" + p2 + ".\n");
 			System.out.printf("The rate of answer 3 is: %.2f%%" + p3 + ".\n");
