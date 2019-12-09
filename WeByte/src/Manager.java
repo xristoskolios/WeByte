@@ -43,16 +43,16 @@ public class Manager extends User {
 	/** Showing the menu and also getting answer from the user-manager to calculate
 	 * some of the given choices for statistic reasons.
 	 */
-	@Override
+
 	public void getMenu() {
 		System.out.println("Welcome, Mr/Ms." + this.getName() + "\n"
 				+ "Please insert 1 for loyal customers.\n"
 				+ "Please insert 2 for customers who are most likely to be lost.\n"
-				+ "Please insert 31 for the Quality of Mobile Services.\n"
-				+ "Please insert 32 for the Quality of the Internet.\n"
-				+ "Please insert 33 for the Quality of the Satellite TV.\n"
-				+ "Please insert 34 for the Quality of Customer Service.\n"
-				+ "Please insert 4 for Questionnaire evaluation.");
+				+ "Please insert 3 for the Quality of Mobile Services.\n"
+				+ "Please insert 4 for the Quality of the Internet.\n"
+				+ "Please insert 5 for the Quality of the Satellite TV.\n"
+				+ "Please insert 6 for the Quality of Customer Service.\n"
+				+ "Please insert 7 for Questionnaire evaluation.");
 		Scanner sc = new Scanner(System.in);
 		int ans = 0;	//Managers's given answer from the keyboard using class Scanner.
 		boolean b = false;
@@ -60,12 +60,10 @@ public class Manager extends User {
 		try {
 			do {
 				ans = sc.nextInt();
-				if (!(ans == 1 || ans == 2 ||
-						ans == 31 ||ans == 32 ||ans == 33 ||ans == 34 ||ans == 35 || ans == 4)) {
+				if (!(ans >= 1 && ans <= 7)) {
 				System.err.println("Wrong input.Please insert one of the choices.");
 				}
-			} while (ans == 1 || ans == 2 ||
-					ans == 31 ||ans == 32 ||ans == 33 ||ans == 34 ||ans == 35 || ans == 4);
+			} while (ans >= 1 && ans <= 7);
 			b = true;
 		} catch (InputMismatchException e){
 			System.err.println("Please type an integer.\nTry again.");
@@ -76,15 +74,15 @@ public class Manager extends User {
 			//method FIXME
 		} else if (ans == 2) {
 			//method FIXME
-		} else if (ans == 31) {
+		} else if (ans == 3) {
 			getQ2Results();
-		} else if (ans == 32) {
-			getInternetQResults();
-		} else if (ans == 33) {
-			getSateliteTVQResults();
-		} else if (ans == 34) {
-			//method FIXME
 		} else if (ans == 4) {
+			getInternetQResults();
+		} else if (ans == 5) {
+			getSateliteTVQResults();
+		} else if (ans == 6) {
+			//method FIXME
+		} else if (ans == 7) {
 			//method FIXME
 		}
 		sc.close();
