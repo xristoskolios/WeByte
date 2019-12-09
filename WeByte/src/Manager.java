@@ -97,8 +97,14 @@ public class Manager extends User {
 			Scanner in = new Scanner(System.in);
 			System.out.println("Please insert your email.");
 			String em = in.nextLine();
+			if (em == "\n" ) {
+				Webyte.startingMenu();
+			}
 			System.out.println("Please insert your password.");
 			String pw = in.nextLine();
+			if (pw == "\n") {
+				Webyte.startingMenu();
+			}
 			for (Manager i: managers) {
 				if (em.equals(i.getEmail()) && pw.equals(i.getPassword())) {
 					System.out.println("Log in done successfully.");
