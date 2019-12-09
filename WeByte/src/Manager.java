@@ -77,7 +77,7 @@ public class Manager extends User {
 			if (ans == 1) {
 				getLoyalQResults();
 			} else if (ans == 2) {
-				//method FIXME
+				getLossQResults();
 			} else if (ans == 3) {
 				getMobileQResults();
 			} else if (ans == 4) {
@@ -125,13 +125,13 @@ public class Manager extends User {
 				System.out.println(Costumer.LoyalCustomer.get(i).toString); 		
 			}
 		}
-		//*Method to print the customers who are most likely to be lost*//
-				public static void getLossQResults() {
-					System.out.println("---The Lost Customers---");
-					for(int i = 0; i <= Customer.LossCustomer.length(); i++) {
-						System.out.println(Costumer.LossCustomer.get(i).toString); 		
-					}
-				}
+	//*Method to print the customers who are most likely to be lost*//
+		public static void getLossQResults() {
+			System.out.println("---The Lost Customers---");
+			for(int i = 0; i <= Customer.LossCustomer.length(); i++) {
+				System.out.println(Costumer.LossCustomer.get(i).toString); 		
+			}
+		}
 	/** Method to calculate the Quality of Mobile Services from answer sheet(ArrayList) from Questionnaire's field q2.*/
 	public static void getMobileQResults() {
 		System.out.println("---The Quality of Mobile Services---");
