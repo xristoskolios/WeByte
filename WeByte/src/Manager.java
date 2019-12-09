@@ -1,7 +1,6 @@
-/*
+/**
  *Manager
 */
-
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -13,37 +12,36 @@ import java.util.Scanner;
  * and there are the methods that calculate its one of them.
 */
 public class Manager extends User {
-	/*
-	 * Every Manager is a User so there is an ArrayList to collect every single one of them to get further information and possibilities.
+	/**
+	 * Every Manager is a User so there is an ArrayList to collect every single one of them 
+	 * to get further information and possibilities.
 	 */
 	
-	/** ArrayList that contains every manager.*/
 	public static ArrayList <Manager> managers = new ArrayList <Manager>();
 	
-	/* Manager's password.*/
-	private String password;
+	private String password; //manager's password to log in 
 	
-	/** Manager's constructor getting as parameter Manager's name, email and password.*/
 	public Manager(String name, String email, String password) {
 		super(name, email);
 		this.password = password;
 		managers.add(this);
 	}
 
-	/** Having Getters so it's possible get access to the object's fields.*/
+	/** Getter for access to the object's fields.*/
 	public String getPassword() {
 		return password;
 	}
 	
-	/**Method toString so we can see the object of the class Manager.*/
+	/** Method toString so we can see the object of the class Manager.*/
 	public String toString() {
-		return "Manager [name= " + this.getName() + " email= " + this.getEmail() + " pw= " + this.getPassword() + "]";
+		return "Manager [name= " + this.getName() 
+		+ " email= " + this.getEmail() 
+		+ " pw= " + this.getPassword() + "]";
 	}
 	
 	/** Showing the menu and also getting answer from the user-manager to calculate
 	 * some of the given choices for statistic reasons.
 	 */
-
 	public static void getMenu(Manager m) {
 		Scanner sc = new Scanner(System.in);
 		int ans;	//Managers's given answer from the keyboard using class Scanner.
@@ -94,7 +92,7 @@ public class Manager extends User {
 		}
 	}
 
-	/* Log-in method for the Managers.*/
+	/** Log-in method for the Managers.*/
 	public static void login() {
 		while (true) {
 			System.out.println("~~~LOGIN AS MANAGER~~~");
@@ -119,7 +117,7 @@ public class Manager extends User {
 		}
 	}
 
-	//** Method to calculate the Quality of Mobile Services from answer sheet(ArrayList) from Questionnaire's field q2.*/
+	/** Method to calculate the Quality of Mobile Services from answer sheet(ArrayList) from Questionnaire's field q2.*/
 	public static void getMobileQResults() {
 		System.out.println("---The Quality of Mobile Services---");
 		int a1 = 0, a2 = 0, a3 = 0, a4 = 0, a5 = 0; //ANSWERS 1,2,3,4,5 FROM QUESTION 2 OF THE QUESTIONNAIRE
@@ -154,7 +152,7 @@ public class Manager extends User {
 		}
 	}
 
-	//** Method to calculate the Quality of the Internet from answer sheet(ArrayList) from Questionnaire's field q3.*/
+	/** Method to calculate the Quality of the Internet from answer sheet(ArrayList) from Questionnaire's field q3.*/
 	public static void getInternetQResults() {
 		System.out.println("---The Quality of the Internet---");
 		int a1 = 0, a2 = 0, a3 = 0, a4 = 0, a5 = 0; //ANSWERS 1,2,3,4,5 FROM QUESTION 3 OF THE QUESTIONNAIRE
@@ -188,7 +186,7 @@ public class Manager extends User {
 		}
 	}
 
-	//** Method to calculate the Quality of the Satellite TV from answer sheet(ArrayList) from Questionnaire's field q4.*/
+	/** Method to calculate the Quality of the Satellite TV from answer sheet(ArrayList) from Questionnaire's field q4.*/
 	public static void getSateliteTVQResults() {
 		System.out.println("---The Quality of the Satellite TV---");
 		int a1 = 0, a2 = 0, a3 = 0, a4 = 0, a5 = 0; //ANSWERS 1,2,3,4,5 FROM QUESTION 4 OF THE QUESTIONNAIRE
