@@ -69,7 +69,7 @@ public class Manager extends User {
 						}
 					} while (ans >= 0 && ans <= 7);
 					b = true;
-				} catch (InputMismatchException e){
+				} catch (InputMismatchException e) {
 					System.err.println("Please type an integer.\nTry again.");
 					sc.nextLine(); //Clearing the scanner if Manager gives String instead of int.
 				}
@@ -113,7 +113,7 @@ public class Manager extends User {
 				if (em.equals(i.getEmail()) && pw.equals(i.getPassword())) {
 					System.out.println("Log in done successfully.\nWelcome, Mr/Ms." + i.getName() + "\n");
 					getMenu(i);
-				} 
+				}
 			}
 			System.out.println("Wrong email or/and password.Please try again.");
 		}
@@ -138,7 +138,7 @@ public class Manager extends User {
 		}
 		int n = Questionnaire.n; //Number of questionnaires done.
 		//Otherwise int n = Questionnaire.Qs.length();
-		if (n>0) {
+		if (n > 0) {
 			double p1 = (double) 100 * a1 / n; //Rate of answer 1
 			double p2 = (double) 100 * a2 / n; //Rate of answer 2
 			double p3 = (double) 100 * a3 / n; //Rate of answer 3
@@ -172,7 +172,7 @@ public class Manager extends User {
 			}
 		}
 		int n = Questionnaire.n; //Number of questionnaires done.
-		if (n>0) {
+		if (n  >0) {
 			double p1 = (double) 100 * a1 / n; //Rate of answer 1
 			double p2 = (double) 100 * a2 / n; //Rate of answer 2
 			double p3 = (double) 100 * a3 / n; //Rate of answer 3
@@ -206,7 +206,7 @@ public class Manager extends User {
 			}
 		}
 		int n = Questionnaire.n; //Number of Questionnaires done.
-		if (n>0) {
+		if (n > 0) {
 			double p1 = (double) 100 * a1 / n; //Rate of answer 1
 			double p2 = (double) 100 * a2 / n; //Rate of answer 2
 			double p3 = (double) 100 * a3 / n; //Rate of answer 3
