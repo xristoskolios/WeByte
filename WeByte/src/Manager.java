@@ -90,7 +90,7 @@ public class Manager extends User {
 		sc.close();
 	}
 	
-	//** Log-in method for the Managers.*/
+	/* Log-in method for the Managers.*/
 	public void login() {
 		System.out.println("~~~LOGIN AS MANAGER~~~");
 		while (true) {
