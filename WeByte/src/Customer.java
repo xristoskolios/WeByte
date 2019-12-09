@@ -35,22 +35,24 @@ public class Customer extends User {
 	public static void login() {
 		Scanner input = new Scanner(System.in);
 		
-		System.out.println("Welcome!\nPlease insert your name.");
-		String name = input.nextLine();
-		System.out.println("Please insert your phone number.");
-		String num = input.next();
 		boolean b = true;
 		while (b) {
+			System.out.println("Please insert your name.");
+			String name = input.nextLine();
+			if (name == "\n") {
+				Webyte.startingMenu();
+			}
+			System.out.println("Please insert your phone number.");
+			String num = input.next();
+			if (num == "\n" ) {
+				Webyte.startingMenu();
+			}
 			if (exists(name,num) !=  null) {
 				Customer c = exists(name,num);
 				Questionnaire.getQ(c);
 				b = false;
 			} else {
 				System.out.println("You gave invalid name or phone number. Please try again.");
-				System.out.println("Please insert your name.");
-				name = input.nextLine();
-				System.out.println("Please insert your phone number.");
-				num = input.next();
 			}
 		}
 	}
