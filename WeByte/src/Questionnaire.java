@@ -57,3 +57,5 @@ public class Questionnaire {
 					sc.nextLine(); //Clearing the scanner if Manager gives string instead of int.
 				}
 			} while (m == false);
+		}
+		
