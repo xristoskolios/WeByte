@@ -34,10 +34,12 @@ public class Manager extends User {
 	public String getPassword() {
 		return password;
 	}
+	
 	/**Method toString so we can see the object of the class Manager.*/
 	public String toString() {
 		return "Manager [name= " + this.getName() + " email= " + this.getEmail() + " pw= " + this.getPassword() + "]";
 	}
+	
 	/** Showing the menu and also getting answer from the user-manager to calculate
 	 * some of the given choices for statistic reasons.
 	 */
@@ -67,7 +69,7 @@ public class Manager extends User {
 						}
 					} while (ans >= 0 && ans <= 7);
 					b = true;
-				} catch (InputMismatchException e){
+				} catch (InputMismatchException e) {
 					System.err.println("Please type an integer.\nTry again.");
 					sc.nextLine(); //Clearing the scanner if Manager gives String instead of int.
 				}
@@ -91,7 +93,7 @@ public class Manager extends User {
 			}
 		}
 	}
-	
+
 	/* Log-in method for the Managers.*/
 	public static void login() {
 		while (true) {
@@ -111,12 +113,12 @@ public class Manager extends User {
 				if (em.equals(i.getEmail()) && pw.equals(i.getPassword())) {
 					System.out.println("Log in done successfully.\nWelcome, Mr/Ms." + i.getName() + "\n");
 					getMenu(i);
-				}	
+				}
 			}
 			System.out.println("Wrong email or/and password.Please try again.");
 		}
 	}
-	
+
 	//** Method to calculate the Quality of Mobile Services from answer sheet(ArrayList) from Questionnaire's field q2.*/
 	public static void getMobileQResults() {
 		System.out.println("---The Quality of Mobile Services---");
@@ -136,7 +138,7 @@ public class Manager extends User {
 		}
 		int n = Questionnaire.n; //Number of questionnaires done.
 		//Otherwise int n = Questionnaire.Qs.length();
-		if (n>0) {
+		if (n > 0) {
 			double p1 = (double) 100 * a1 / n; //Rate of answer 1
 			double p2 = (double) 100 * a2 / n; //Rate of answer 2
 			double p3 = (double) 100 * a3 / n; //Rate of answer 3
@@ -151,6 +153,7 @@ public class Manager extends User {
 			System.out.println("No questionnaires have been done yet.");
 		}
 	}
+
 	//** Method to calculate the Quality of the Internet from answer sheet(ArrayList) from Questionnaire's field q3.*/
 	public static void getInternetQResults() {
 		System.out.println("---The Quality of the Internet---");
@@ -169,7 +172,7 @@ public class Manager extends User {
 			}
 		}
 		int n = Questionnaire.n; //Number of questionnaires done.
-		if (n>0) {
+		if (n  >0) {
 			double p1 = (double) 100 * a1 / n; //Rate of answer 1
 			double p2 = (double) 100 * a2 / n; //Rate of answer 2
 			double p3 = (double) 100 * a3 / n; //Rate of answer 3
@@ -184,6 +187,7 @@ public class Manager extends User {
 			System.out.println("No questionnaires have been done yet.");
 		}
 	}
+
 	//** Method to calculate the Quality of the Satellite TV from answer sheet(ArrayList) from Questionnaire's field q4.*/
 	public static void getSateliteTVQResults() {
 		System.out.println("---The Quality of the Satellite TV---");
@@ -202,7 +206,7 @@ public class Manager extends User {
 			}
 		}
 		int n = Questionnaire.n; //Number of Questionnaires done.
-		if (n>0) {
+		if (n > 0) {
 			double p1 = (double) 100 * a1 / n; //Rate of answer 1
 			double p2 = (double) 100 * a2 / n; //Rate of answer 2
 			double p3 = (double) 100 * a3 / n; //Rate of answer 3
