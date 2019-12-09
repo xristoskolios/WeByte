@@ -29,7 +29,7 @@ public class Manager extends User {
 		this.password = password;
 		managers.add(this);
 	}
-	
+
 	/** Having Getters so it's possible get access to the object's fields.*/
 	public String getPassword() {
 		return password;
