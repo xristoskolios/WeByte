@@ -1,13 +1,16 @@
-/*test*/
-public abstract class User {
+import java.util.ArrayList;
+
+public class User {
 	
 	private String name;
 	private String email;
 	
+	public static ArrayList <User> users = new ArrayList <User>();
+	
 	public User(String name, String email) {
-		super();
 		this.name = name;
 		this.email = email;
+		users.add(this);
 	}
 
 	public String getName() {
@@ -25,9 +28,5 @@ public abstract class User {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
-	public abstract void getMenu();{
 		
-	}
-
 }
