@@ -55,4 +55,9 @@ public class Customer extends User {
 		}
 	}
 
+	@Override
+	public String toString() {
+		return "Customer [name= " + getName() + " email= " + getEmail() + " tel= " + tel + "]";
+	}
+
 }
