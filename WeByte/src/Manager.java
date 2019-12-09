@@ -27,20 +27,21 @@ public class Manager extends User {
 		managers.add(this);
 	}
 
-	/** Having Getters so it's possible get access to the object's fields.*/
+	/** Getter for access to the object's fields.*/
 	public String getPassword() {
 		return password;
 	}
 	
-	/**Method toString so we can see the object of the class Manager.*/
+	/** Method toString so we can see the object of the class Manager.*/
 	public String toString() {
-		return "Manager [name= " + this.getName() + " email= " + this.getEmail() + " pw= " + this.getPassword() + "]";
+		return "Manager [name= " + this.getName() 
+		+ " email= " + this.getEmail() 
+		+ " pw= " + this.getPassword() + "]";
 	}
 	
 	/** Showing the menu and also getting answer from the user-manager to calculate
 	 * some of the given choices for statistic reasons.
 	 */
-
 	public static void getMenu(Manager m) {
 		Scanner sc = new Scanner(System.in);
 		int ans;	//Managers's given answer from the keyboard using class Scanner.
