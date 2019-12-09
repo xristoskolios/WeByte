@@ -101,5 +101,94 @@ public class Questionnaire {
 					sc.nextLine(); //Clearing the scanner if Manager gives string instead of int.
 				}
 			} while (m == false);
-
+			//Q2
+			m = false;
+			do {
+				try {
+					do {
+						System.out.println("How satisfied are you with your mobile service from 1 to 5 "
+								+ "with 1 being not satisfied at all and 5 being fully satisfied.\n");
+						ans2 = sc.nextInt();
+						if (!(ans2 == 1 || ans2 == 2 || ans2 == 3 || ans2 == 4 || ans2 == 5)) {
+							System.err.println("Wrong input. Please insert one of the choices.\n");
+						}
+					} while (!(ans2 == 1 || ans2 == 2 || ans2 == 3 || ans2 == 4 || ans2 == 5));
+					m = true;
+				} catch (InputMismatchException e){
+					System.err.println("Please type an integer.\nTry again.");
+					sc.nextLine(); //Clearing the scanner if Customer gives string instead of int.
+				}
+			} while (m == false);
+			//Q3
+			m = false;
+			do {
+				try {
+					do {
+						System.out.println("How satisfied are you with your landline service from 1 "
+								+ "to 5 with 1 being not satisfied at all and 5 being fully satisfied.\n");
+						ans3 = sc.nextInt();
+						if (!(ans3 == 1 || ans3 == 2 || ans3 == 3 || ans3 == 4 || ans3 == 5)) {
+							System.err.println("Wrong input. Please insert one of the choices.");
+						}
+					} while (!(ans3 == 1 || ans3 == 2 || ans3 == 3 || ans3 == 4 || ans3 == 5));
+					m = true;
+				} catch (InputMismatchException e){
+					System.err.println("Please type an integer.\nTry again.");
+					sc.nextLine(); //Clearing the scanner if Customer gives string instead of int.
+				}
+			} while (m == false);
+			//Q4
+			m = false;
+			do {
+				try {
+					do {
+						System.out.println("How satisfied are you with your internet service from 1 "
+								+ "to 5 with 1 being not satisfied at all and 5 being fully satisfied.\n");
+						ans4 = sc.nextInt();
+						if (!(ans4 == 1 || ans4 == 2 || ans4 == 3 || ans4 == 4 || ans4 == 5)) {
+							System.err.println("Wrong input. Please insert one of the choices.");
+						}
+					} while (!(ans4 == 1 || ans4 == 2 || ans4 == 3 || ans4 == 4 || ans4 == 5));
+					m = true;
+				} catch (InputMismatchException e){
+					System.err.println("Please type an integer.\nTry again.");
+					sc.nextLine(); //Clearing the scanner if Customer gives string instead of int.
+				}
+			} while (m == false);
+			//Q5
+			m = false;
+			do {
+				try {
+					do {
+						System.out.println("How satisfied are you with your cable TV service from 1 "
+								+ "to 5 with 1 being not satisfied at all and 5 being fully satisfied.\n");
+						ans5 = sc.nextInt();
+						if (!(ans5 == 1 || ans5 == 2 || ans5 == 3 || ans5 == 4 || ans5 == 5)) {
+							System.err.println("Wrong input. Please insert one of the choices.\n");
+						}
+					} while (!(ans5 == 1 || ans5 == 2 || ans5 == 3 || ans5 == 4 || ans5 == 5));
+					m = true;
+				} catch (InputMismatchException e){
+					System.err.println("Please type an integer.\nTry again.");
+					sc.nextLine(); //Clearing the scanner if Customer gives string instead of int.
+				}
+			} while (m == false);
+			//Q6
+			m = false;
+			do {
+				try {
+					do {
+						System.out.println("How satisfied are you with your customer service from 1 "
+								+ "to 5 with 1 being not satisfied at all and 5 being fully satisfied.\n");
+						ans6 = sc.nextInt();
+						if (!(ans6 == 1 || ans6 == 2 || ans6 == 3 || ans6 == 4 || ans6 == 5)) {
+							System.err.println("Wrong input. Please insert one of the choices.\n");
+						}
+					} while (!(ans6 == 1 || ans6 == 2 || ans6 == 3 || ans6 == 4 || ans6 == 5));
+					m = true;
+				} catch (InputMismatchException e){
+					System.err.println("Please type an integer.\nTry again.");
+					sc.nextLine(); //Clearing the scanner if Customer gives string instead of int.
+				}
+			} while (m == false);
 		
