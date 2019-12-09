@@ -3,9 +3,7 @@ import java.util.Scanner;
 
 public class Customer extends User {
 	
-	private String name;
 	private String tel;
-	private String email;
 	
 	public static ArrayList <Customer> customers = new ArrayList <Customer>();
 	public static ArrayList <Customer> LoyalCustomers = new ArrayList <Customer>();
@@ -17,31 +15,11 @@ public class Customer extends User {
 		customers.add(this);
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public String getTel() {
 		return tel;
 	}
-
-	public void setTel(String tel) {
-		this.tel = tel;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
 	
-	public boolean login(String name,String tel) {
+	public static boolean login(String name,String tel) {
 		boolean b = false;
 		String i=" ";
 		for (Customer rc:Customer.customers) {
@@ -56,8 +34,7 @@ public class Customer extends User {
 		
 	}
 	
-	@Override
-	public void getMenu() {
+	public static void getMenu() {
 		Scanner input = new Scanner(System.in);
 		
 		System.out.println("Welcome!\nPlease insert your name.");
