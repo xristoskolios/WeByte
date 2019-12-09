@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import methods1267.Questionnaire;
+
 /**
  * Containing everything that's necessary for a Manager.
  * There is the manager's menu with some choices which the manager can choose from
@@ -73,7 +75,7 @@ public class Manager extends User {
 				}
 			} while (b == false);
 			if (ans == 1) {
-				//method FIXME
+				getLoyalQResults();
 			} else if (ans == 2) {
 				//method FIXME
 			} else if (ans == 3) {
@@ -83,7 +85,7 @@ public class Manager extends User {
 			} else if (ans == 5) {
 				getSateliteTVQResults();
 			} else if (ans == 6) {
-				//method FIXME
+				getCustomerQResults();
 			} else if (ans == 7) {
 				//method FIXME
 			} else {//ans == 0
@@ -116,7 +118,13 @@ public class Manager extends User {
 			System.out.println("Wrong email or/and password.Please try again.");
 		}
 	}
-
+	//*Method to print the loyal customers*//
+		public static void getLoyalQResults() {
+			System.out.println("---The Loyal Customers---");
+			for(int i = 0; i <= Customer.LoyalCustomer.length(); i++) {
+				System.out.println(Costumer.LoyalCustomer.get(i).toString); 		
+			}
+		}
 	/** Method to calculate the Quality of Mobile Services from answer sheet(ArrayList) from Questionnaire's field q2.*/
 	public static void getMobileQResults() {
 		System.out.println("---The Quality of Mobile Services---");
@@ -215,6 +223,40 @@ public class Manager extends User {
 			System.out.printf("The rate of answer 3 is: %.2f%%" + p3 + ".\n");
 			System.out.printf("The rate of answer 4 is: %.2f%%" + p4 + ".\n");
 			System.out.printf("The rate of answer 5 is: %.2f%%" + p5 + ".\n");
+		} else { //No questionnaires done by any Customer.
+			System.out.println("No questionnaires have been done yet.");
+		}
+	}
+	//** Method to calculate the Quality of Customer Service from answer sheet(ArrayList) from Questionnaire's field q6.*/
+	public static void getCustomerQResults() {
+		System.out.println("---The Quality of Customer Service---");
+		int a1 = 0, a2 = 0, a3 = 0, a4 = 0, a5 = 0; //ANSWERS 1,2,3,4,5 FROM QUESTION 6 OF THE QUESTIONNAIRE
+		for (Questionnaire k: Questionnaire.Qs) {
+			if (k.q6 == 1) {
+				a1++;
+			} else if (k.q6 == 2) {
+				a2++;
+			} else if (k.q6 == 3) {
+				a3++;
+			} else if (k.q6 == 4) {
+				a4++;
+			} else { // k.q6 == 5, definetely q6 must be either 1 either 2 either 3 either 4 either 5.
+				a5++;
+			}
+		}
+		int n = Questionnaire.n; //Number of questionnaires done.
+		//Otherwise int n = Questionnaire.Qs.length;
+		if (n>0) {
+			double p1 = (double) 100 * a1 / n; //Rate of answer 1
+			double p2 = (double) 100 * a2 / n; //Rate of answer 2
+			double p3 = (double) 100 * a3 / n; //Rate of answer 3
+			double p4 = (double) 100 * a4 / n; //Rate of answer 4
+			double p5 = (double) 100 * a5 / n; //Rate of answer 5
+			System.out.printf("The rate of asnwer 1 is: %.2f%%" + p1 + ".\n");
+			System.out.printf("The rate of asnwer 2 is: %.2f%%" + p2 + ".\n");
+			System.out.printf("The rate of asnwer 3 is: %.2f%%" + p3 + ".\n");
+			System.out.printf("The rate of asnwer 4 is: %.2f%%" + p4 + ".\n");
+			System.out.printf("The rate of asnwer 5 is: %.2f%%" + p5 + ".\n");
 		} else { //No questionnaires done by any Customer.
 			System.out.println("No questionnaires have been done yet.");
 		}
