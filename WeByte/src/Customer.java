@@ -12,7 +12,8 @@ import java.util.Scanner;
 
 public class Customer extends User {
 	/**
-	 * Every Customer is a User so there is an ArrayList to collect every single one of them to get further information and possibilities.
+	 * Every Customer is a User so there is an ArrayList to collect every single one of them 
+	 * to get further information and possibilities.
 	 */
 	
 	private String tel;
@@ -69,6 +70,7 @@ public class Customer extends User {
 		}
 	}
 	
+	/** Method toString so we can see the object of the class Customer.*/
 	@Override
 	public String toString() {
 		return "Customer [name= " + this.getName() + " email= " + this.getEmail() + " tel= " + tel + "]";
