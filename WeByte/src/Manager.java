@@ -34,10 +34,12 @@ public class Manager extends User {
 	public String getPassword() {
 		return password;
 	}
+	
 	/**Method toString so we can see the object of the class Manager.*/
 	public String toString() {
 		return "Manager [name= " + this.getName() + " email= " + this.getEmail() + " pw= " + this.getPassword() + "]";
 	}
+	
 	/** Showing the menu and also getting answer from the user-manager to calculate
 	 * some of the given choices for statistic reasons.
 	 */
@@ -91,7 +93,7 @@ public class Manager extends User {
 			}
 		}
 	}
-	
+
 	/* Log-in method for the Managers.*/
 	public static void login() {
 		while (true) {
@@ -111,12 +113,12 @@ public class Manager extends User {
 				if (em.equals(i.getEmail()) && pw.equals(i.getPassword())) {
 					System.out.println("Log in done successfully.\nWelcome, Mr/Ms." + i.getName() + "\n");
 					getMenu(i);
-				}	
+				} 
 			}
 			System.out.println("Wrong email or/and password.Please try again.");
 		}
 	}
-	
+
 	//** Method to calculate the Quality of Mobile Services from answer sheet(ArrayList) from Questionnaire's field q2.*/
 	public static void getMobileQResults() {
 		System.out.println("---The Quality of Mobile Services---");
@@ -151,6 +153,7 @@ public class Manager extends User {
 			System.out.println("No questionnaires have been done yet.");
 		}
 	}
+
 	//** Method to calculate the Quality of the Internet from answer sheet(ArrayList) from Questionnaire's field q3.*/
 	public static void getInternetQResults() {
 		System.out.println("---The Quality of the Internet---");
@@ -184,6 +187,7 @@ public class Manager extends User {
 			System.out.println("No questionnaires have been done yet.");
 		}
 	}
+
 	//** Method to calculate the Quality of the Satellite TV from answer sheet(ArrayList) from Questionnaire's field q4.*/
 	public static void getSateliteTVQResults() {
 		System.out.println("---The Quality of the Satellite TV---");
