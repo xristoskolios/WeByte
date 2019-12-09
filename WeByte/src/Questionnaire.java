@@ -34,6 +34,50 @@ public class Questionnaire {
 		Qs.add(this);
 	}
 	
+	public int getQ1() {
+		return q1;
+	}
+
+	public int getQ2() {
+		return q2;
+	}
+
+	public int getQ3() {
+		return q3;
+	}
+
+	public int getQ4() {
+		return q4;
+	}
+
+	public int getQ5() {
+		return q5;
+	}
+
+	public int getQ6() {
+		return q6;
+	}
+	
+	public int getQ7() {
+		return q7;
+	}
+
+	public int getQ8() {
+		return q8;
+	}
+
+	public int getQ9() {
+		return q9;
+	}
+
+	public int getQ10() {
+		return q10;
+	}
+
+	public void setQ10(int q10) {
+		this.q10 = q10;
+	}
+
 	public static void getQ(Customer c) {
 		Scanner sc = new Scanner(System.in);
 		boolean m = false;
@@ -57,5 +101,5 @@ public class Questionnaire {
 					sc.nextLine(); //Clearing the scanner if Manager gives string instead of int.
 				}
 			} while (m == false);
-		}
+
 		
