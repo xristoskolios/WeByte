@@ -191,4 +191,91 @@ public class Questionnaire {
 					sc.nextLine(); //Clearing the scanner if Customer gives string instead of int.
 				}
 			} while (m == false);
-		
+			//Q7
+			m = false;
+			do {
+				try {
+					do {
+						System.out.println("Does the price correspond with the value of the services? "
+								+ "Type 1 for YES or 2 for NO.\n");
+						ans7 = sc.nextInt();
+						if (!(ans7 == 1 || ans7 == 2)) {
+							System.err.println("Wrong input. Please insert one of the choices.\n");
+						}
+					} while (!(ans7 == 1 || ans7 == 2));
+					m = true;
+				} catch (InputMismatchException e){
+					System.err.println("Please type an integer.\nTry again.");
+					sc.nextLine(); //Clearing the scanner if Customer gives string instead of int.
+				}
+			} while (m == false);
+			//Q8
+			m = false;
+			do {
+				try {
+					do {
+						System.out.println("Would you recommend our services to other people? "
+								+ "Type 1 for YES or 2 for NO.\n");
+						ans8 = sc.nextInt();
+						if (!(ans8 == 1 || ans8 == 2)) {
+							System.err.println("Wrong input. Please insert one of the choices.\n");
+						}
+					} while (!(ans8 == 1 || ans8 == 2));
+					m = true;
+				} catch (InputMismatchException e){
+					System.err.println("Please type an integer.\nTry again.");
+					sc.nextLine(); //Clearing the scanner if Customer gives string instead of int.
+				}
+			} while (m == false);
+			//Q9
+			m = false;
+			do {
+				try {
+					do {
+						System.out.println("Are you satisfied with our questionnaire? "
+								+ "Type 1 for YES or 2 for NO.\n");
+						ans9 = sc.nextInt();
+						if (!(ans9 == 1 || ans9 == 2)) {
+							System.err.println("Wrong input. Please insert one of the choices.\n");
+						}
+					} while (!(ans9 == 1 || ans9 == 2));
+					m = true;
+				} catch (InputMismatchException e){
+					System.err.println("Please type an integer.\nTry again.");
+					sc.nextLine(); //Clearing the scanner if Customer gives string instead of int.
+				}
+			} while (m == false);
+			//Q10
+			m = false;
+			do {
+				try {
+					do {
+						System.out.println("Would you like to submit your answers? Type 1 for SUBMIT,"
+								+ " 2 for REDO or 3 for CANCEL.\n");
+						ans10 = sc.nextInt();
+						if (!(ans10 == 1 || ans10 == 2 || ans10 == 3)) {
+							System.err.println("Wrong input. Please insert one of the choices.\n");
+						}
+					} while (!(ans10 == 1 || ans10 == 2 || ans10 == 3));
+					m = true;
+				} catch (InputMismatchException e){
+					System.err.println("Please type an integer.\nTry again.");
+					sc.nextLine(); //Clearing the scanner if Customer gives string instead of int.
+				}
+			} while (m == false);
+		} while (ans10 == 2);
+		if (ans10 == 1) {
+			if (ans1 == 3) {
+				Customer.LoyalCustomer.add(c);
+			}
+			if (ans2 < 3 && ans3 < 3 && ans4 < 3 && ans5 < 3 && ans6 < 3) {
+				Customer.LossCustomers.add(c);
+			}
+			Questionnaire q = new Questionnaire(ans1, ans2, ans3, ans4, ans5, ans6, ans7, ans8, ans9, ans10);
+			WeByte.getStartingMenu();
+		} else { //ans10 == 3
+			WeByte.getStartingMenu();
+		}	
+	}
+}
+	
