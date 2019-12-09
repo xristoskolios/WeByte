@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/* Customer*/
+
 public class Customer extends User {
 	
 	private String tel;
