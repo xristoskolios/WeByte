@@ -21,22 +21,18 @@ public class Customer extends User {
 		return tel;
 	}
 	
-	public static boolean login(String name,String tel) {
-		boolean b = false;
-		String i=" ";
+	public static Customer exists(String name,String tel) {
+		Customer c = null;
 		for (Customer rc:Customer.customers) {
 			if ((rc.getName().equals(name)) && (rc.getTel().equals(tel))) {
-				i = rc.getTel(); 
+				c = rc;
 			}
 		}
-		if (i!="") {
-			b = true;
-		}
-		return b;
+		return c;
 		
 	}
 	
-	public static void getMenu() {
+	public static void login() {
 		Scanner input = new Scanner(System.in);
 		
 		System.out.println("Welcome!\nPlease insert your name.");
@@ -45,8 +41,9 @@ public class Customer extends User {
 		String num = input.next();
 		boolean b = true;
 		while (b) {
-			if (login(name,num) == true) {
-				//emfanizetai erotimatologio
+			if (exists(name,num) !=  null) {
+				Customer c = exists(name,num);
+				Questionnaire.getQ(c);
 				b = false;
 			} else {
 				System.out.println("You gave invalid name or phone number. Please try again.");
