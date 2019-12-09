@@ -28,8 +28,7 @@ public class Customer extends User {
 				c = rc;
 			}
 		}
-		return c;
-		
+		return c;	
 	}
 	
 	public static void login() {
@@ -39,13 +38,13 @@ public class Customer extends User {
 		while (b) {
 			System.out.println("Please insert your name.");
 			String name = input.nextLine();
-			if (name == "\n") {
-				Webyte.startingMenu();
+			if (name.equals("")) {
+				WeByte.getStartingMenu();
 			}
 			System.out.println("Please insert your phone number.");
 			String num = input.next();
-			if (num == "\n" ) {
-				Webyte.startingMenu();
+			if (num.equals("")) {
+				WeByte.getStartingMenu();
 			}
 			if (exists(name,num) !=  null) {
 				Customer c = exists(name,num);
