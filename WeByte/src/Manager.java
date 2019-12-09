@@ -87,7 +87,7 @@ public class Manager extends User {
 			} else if (ans == 6) {
 				getCustomerQResults();
 			} else if (ans == 7) {
-				//method FIXME
+				getEvaluationQResults();
 			} else {//ans == 0
 				WeByte.getStartingMenu();
 			}
@@ -264,6 +264,28 @@ public class Manager extends User {
 			System.out.printf("The rate of asnwer 3 is: %.2f%%" + p3 + ".\n");
 			System.out.printf("The rate of asnwer 4 is: %.2f%%" + p4 + ".\n");
 			System.out.printf("The rate of asnwer 5 is: %.2f%%" + p5 + ".\n");
+		} else { //No questionnaires done by any Customer.
+			System.out.println("No questionnaires have been done yet.");
+		}
+	}
+	//** Method to calculate the Questionnaire Evaluation Service from answer sheet(ArrayList) from Questionnaire's field q9.*/
+	public static void getEvaluationQResults() {
+		System.out.println("---The Questionnaire Evaluation---");
+		int a1 = 0, a2 = 0; //ANSWERS 1,2 FROM QUESTION 9 OF THE QUESTIONNAIRE
+		for (Questionnaire k: Questionnaire.Qs) {
+			if (k.q9 == 1) {
+				a1++;
+			} else if (k.q9 == 2) {
+				a2++;
+			}
+		}
+		int n = Questionnaire.n; //Number of questionnaires done.
+		//Otherwise int n = Questionnaire.Qs.length;
+		if (n>0) {
+			double p1 = (double) 100 * a1 / n; //Rate of answer 1
+			double p2 = (double) 100 * a2 / n; //Rate of answer 2
+		System.out.printf("The rate of asnwer 1 is: %.2f%%" + p1 + ".\n");
+		System.out.printf("The rate of asnwer 2 is: %.2f%%" + p2 + ".\n");
 		} else { //No questionnaires done by any Customer.
 			System.out.println("No questionnaires have been done yet.");
 		}
