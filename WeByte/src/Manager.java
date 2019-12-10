@@ -6,8 +6,6 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import methods1267.Questionnaire;
-
 /**
  * Containing everything that's necessary for a Manager.
  * There is the manager's menu with some choices which the manager can choose from
@@ -118,18 +116,19 @@ public class Manager extends User {
 			System.out.println("Wrong email or/and password.Please try again.");
 		}
 	}
-	//*Method to print the loyal customers*//
+	
+	/** Method to print the loyal customers*/
 		public static void getLoyalQResults() {
 			System.out.println("---The Loyal Customers---");
-			for(int i = 0; i <= Customer.LoyalCustomer.length(); i++) {
-				System.out.println(Costumer.LoyalCustomer.get(i).toString); 		
+			for(int i = 0; i <= Customer.LoyalCustomers.size(); i++) {
+				System.out.println(Customer.LoyalCustomers.get(i).toString()); 		
 			}
 		}
-	//*Method to print the customers who are most likely to be lost*//
+	/** Method to print the customers who are most likely to be lost*/
 		public static void getLossQResults() {
 			System.out.println("---The Lost Customers---");
-			for(int i = 0; i <= Customer.LossCustomer.length(); i++) {
-				System.out.println(Costumer.LossCustomer.get(i).toString); 		
+			for(int i = 0; i <= Customer.LossCustomers.size(); i++) {
+				System.out.println(Customer.LossCustomers.get(i).toString()); 		
 			}
 		}
 	/** Method to calculate the Quality of Mobile Services from answer sheet(ArrayList) from Questionnaire's field q2.*/
