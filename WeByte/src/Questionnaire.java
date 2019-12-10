@@ -281,7 +281,8 @@ public class Questionnaire {
 			WeByte.getStartingMenu();
 		} else { //ans10 == 3
 			WeByte.getStartingMenu();
-		}	
+		}
+		sc.close();
 	}
 }
 	
