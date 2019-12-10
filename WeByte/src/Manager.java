@@ -72,6 +72,7 @@ public class Manager extends User {
 					sc.nextLine(); //Clearing the scanner if Manager gives String instead of int.
 				}
 			} while (b == false);
+			sc.close();
 			if (ans == 1) {
 				getLoyalQResults();
 			} else if (ans == 2) {
@@ -94,22 +95,23 @@ public class Manager extends User {
 
 	/** Log-in method for the Managers.*/
 	public static void login() {
+		Scanner sc = new Scanner(System.in);
 		while (true) {
 			System.out.println("~~~LOGIN AS MANAGER~~~");
-			Scanner in = new Scanner(System.in);
 			System.out.println("Please insert your email.");
-			String em = in.nextLine();
+			String em = sc.nextLine();
 			if (em.equals("")) {
 				WeByte.getStartingMenu();
 			}
 			System.out.println("Please insert your password.");
-			String pw = in.nextLine();
+			String pw = sc.nextLine();
 			if (pw.equals("")) {
 				WeByte.getStartingMenu();
 			}
 			for (Manager i: managers) {
 				if (em.equals(i.getEmail()) && pw.equals(i.getPassword())) {
 					System.out.println("Log in done successfully.\nWelcome, Mr/Ms." + i.getName() + "\n");
+					sc.close();
 					getMenu(i);
 				}
 			}
