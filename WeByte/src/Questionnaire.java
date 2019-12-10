@@ -1,3 +1,7 @@
+/**
+ * Questionnaire
+ */
+
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -77,7 +81,8 @@ public class Questionnaire {
 	public void setQ10(int q10) {
 		this.q10 = q10;
 	}
-
+	
+	/** Method that contains the questionnaire */
 	public static void getQ(Customer c) {
 		Scanner sc = new Scanner(System.in);
 		boolean m = false;
@@ -264,12 +269,13 @@ public class Questionnaire {
 				}
 			} while (m == false);
 		} while (ans10 == 2);
-		if (ans10 == 1) {
+		if (ans10 == 1) { //if the customer submits the answers 
 			if (ans1 == 3) {
-				Customer.LoyalCustomer.add(c);
+				Customer.LoyalCustomers.add(c); 
 			}
 			if (ans2 < 3 && ans3 < 3 && ans4 < 3 && ans5 < 3 && ans6 < 3) {
-				Customer.LossCustomers.add(c);
+				Customer.LossCustomers.add(c); 
+				//the customer is not satisfied with all of the services
 			}
 			Questionnaire q = new Questionnaire(ans1, ans2, ans3, ans4, ans5, ans6, ans7, ans8, ans9, ans10);
 			WeByte.getStartingMenu();
