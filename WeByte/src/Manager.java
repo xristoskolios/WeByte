@@ -136,13 +136,13 @@ public class Manager extends User {
 		System.out.println("---The Quality of Mobile Services---");
 		int a1 = 0, a2 = 0, a3 = 0, a4 = 0, a5 = 0; //ANSWERS 1,2,3,4,5 FROM QUESTION 2 OF THE QUESTIONNAIRE
 		for (Questionnaire k: Questionnaire.Qs) {
-			if (k.q1 == 1) {//FIXME k.getq1(); q1 is private.
+			if (k.getQ1() == 1) {
 				a1++;
-			} else if (k.q2 == 2) {
+			} else if (k.getQ1() == 2) {
 				a2++;
-			} else if (k.q2 == 3) {
+			} else if (k.getQ1() == 3) {
 				a3++;
-			} else if (k.q2 == 4) {
+			} else if (k.getQ1() == 4) {
 				a4++;
 			} else { // k.q2 == 5, definately q2 must be either 1 either 2 either 3 either 4 either 5.
 				a5++;
@@ -171,13 +171,13 @@ public class Manager extends User {
 		System.out.println("---The Quality of the Internet---");
 		int a1 = 0, a2 = 0, a3 = 0, a4 = 0, a5 = 0; //ANSWERS 1,2,3,4,5 FROM QUESTION 3 OF THE QUESTIONNAIRE
 		for (Questionnaire k: Questionnaire.Qs) {
-			if (k.q3 == 1) {
+			if (k.getQ3() == 1) {
 				a1++;
-			} else if (k.q3 == 2) {
+			} else if (k.getQ3() == 2) {
 				a2++;
-			} else if (k.q3 == 3) {
+			} else if (k.getQ3() == 3) {
 				a3++;
-			} else if (k.q3 == 4) {
+			} else if (k.getQ3() == 4) {
 				a4++;
 			} else { // k.q3 == 5, definitely q3 must be either 1 either 2 either 3 either 4 either 5.
 				a5++;
@@ -205,13 +205,13 @@ public class Manager extends User {
 		System.out.println("---The Quality of the Satellite TV---");
 		int a1 = 0, a2 = 0, a3 = 0, a4 = 0, a5 = 0; //ANSWERS 1,2,3,4,5 FROM QUESTION 4 OF THE QUESTIONNAIRE
 		for (Questionnaire k: Questionnaire.Qs) {
-			if (k.q4 == 1) {
+			if (k.getQ4() == 1) {
 				a1++;
-			} else if (k.q4 == 2) {
+			} else if (k.getQ4() == 2) {
 				a2++;
-			} else if (k.q4 == 3) {
+			} else if (k.getQ4() == 3) {
 				a3++;
-			} else if (k.q4 == 4) {
+			} else if (k.getQ4() == 4) {
 				a4++;
 			} else { // k.q4 == 5, definitely q4 must be either 1 either 2 either 3 either 4 either 5.
 				a5++;
@@ -238,13 +238,13 @@ public class Manager extends User {
 		System.out.println("---The Quality of Customer Service---");
 		int a1 = 0, a2 = 0, a3 = 0, a4 = 0, a5 = 0; //ANSWERS 1,2,3,4,5 FROM QUESTION 6 OF THE QUESTIONNAIRE
 		for (Questionnaire k: Questionnaire.Qs) {
-			if (k.q6 == 1) {
+			if (k.getQ6() == 1) {
 				a1++;
-			} else if (k.q6 == 2) {
+			} else if (k.getQ6() == 2) {
 				a2++;
-			} else if (k.q6 == 3) {
+			} else if (k.getQ6() == 3) {
 				a3++;
-			} else if (k.q6 == 4) {
+			} else if (k.getQ6() == 4) {
 				a4++;
 			} else { // k.q6 == 5, definetely q6 must be either 1 either 2 either 3 either 4 either 5.
 				a5++;
@@ -272,9 +272,9 @@ public class Manager extends User {
 		System.out.println("---The Questionnaire Evaluation---");
 		int a1 = 0, a2 = 0; //ANSWERS 1,2 FROM QUESTION 9 OF THE QUESTIONNAIRE
 		for (Questionnaire k: Questionnaire.Qs) {
-			if (k.q9 == 1) {
+			if (k.getQ9() == 1) {
 				a1++;
-			} else if (k.q9 == 2) {
+			} else if (k.getQ9() == 2) {
 				a2++;
 			}
 		}
