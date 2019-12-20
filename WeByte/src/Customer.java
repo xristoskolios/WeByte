@@ -1,9 +1,19 @@
+/** 
+ * Customer
+ */
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/* Customer*/
+/** 
+ * Containing everything that's necessary for a Customer.
+ * There is the customer's menu with the questionnaire the customer is called to answer
+ */
 
 public class Customer extends User {
+	/** Every Customer is a User so there is an ArrayList to collect every single one of them 
+	 * to get further information and possibilities.
+	 */
 	
 	private String tel;
 	
@@ -16,11 +26,13 @@ public class Customer extends User {
 		this.tel = tel;
 		customers.add(this);
 	}
-
+	
+	/** Getter for access to the object's fields.*/
 	public String getTel() {
 		return tel;
 	}
 	
+	/** Method that checks if the customer exists in our customer list */
 	public static Customer exists(String name, String tel) {
 		Customer c = null;
 		for (Customer rc:Customer.customers) {
@@ -31,6 +43,7 @@ public class Customer extends User {
 		return c;	
 	}
 
+	/** Login Method for the Customers */
 	public static void login() {
 		Scanner input = new Scanner(System.in);
 		boolean b = true;
@@ -55,7 +68,8 @@ public class Customer extends User {
 		}
 		input.close();
 	}
-
+	
+	/** Method toString so we can see the object of the class Customer.*/
 	@Override
 	public String toString() {
 		return "Customer [name= " + getName() + " email= " + getEmail() + " tel= " + tel + "]";
