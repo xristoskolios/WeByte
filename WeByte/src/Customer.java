@@ -21,7 +21,7 @@ public class Customer extends User {
 		return tel;
 	}
 	
-	public static Customer exists(String name,String tel) {
+	public static Customer exists(String name, String tel) {
 		Customer c = null;
 		for (Customer rc:Customer.customers) {
 			if ((rc.getName().equals(name)) && (rc.getTel().equals(tel))) {
@@ -33,25 +33,24 @@ public class Customer extends User {
 
 	public static void login() {
 		Scanner input = new Scanner(System.in);
-		
 		boolean b = true;
 		while (b) {
-			System.out.println("Please insert your name.");
+			System.out.println("~~~LOGIN AS CUSTOMER~~~\nPlease insert your name.");
 			String name = input.nextLine();
 			if (name.equals("")) {
 				WeByte.getStartingMenu();
 			}
 			System.out.println("Please insert your phone number.");
-			String num = input.next();
+			String num = input.nextLine();
 			if (num.equals("")) {
 				WeByte.getStartingMenu();
 			}
-			if (exists(name,num) !=  null) {
-				Customer c = exists(name,num);
+			if (exists(name, num) !=  null) {
+				Customer c = exists(name, num);
 				Questionnaire.getQ(c);
 				b = false;
 			} else {
-				System.out.println("You gave invalid name or phone number. Please try again.");
+				System.out.println("You gave invalid name or phone number. Please try again.\n");
 			}
 		}
 		input.close();
