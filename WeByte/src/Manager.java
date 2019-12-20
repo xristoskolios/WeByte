@@ -115,7 +115,7 @@ public class Manager extends User {
 					getMenu(i);
 				}
 			}
-			System.out.println("Wrong email or/and password.Please try again.");
+			System.out.println("Wrong email or/and password.Please try again.\n");
 		}
 	}
 	
