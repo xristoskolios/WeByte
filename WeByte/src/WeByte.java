@@ -11,12 +11,26 @@ import java.util.Scanner;
 public class WeByte {
 
 	public static void main(String[] args) {
-		//FIXME
+		loadObjects();
 		getStartingMenu();
 	}
-	//** Loading the objects of class Manager,Customer and User which is the superclass.
+	//** Loading the objects of class Manager,Customer
 	public static void loadObjects() {
-		//FIXME
+		/* Generating objects of the class Manager */
+		Manager m1 = new Manager("Nikos papadopoulos", "nikos@gmail.gr", "aqwesd7");
+		Manager m2 = new Manager("makis papadopoulos", "makis@gmail.gr", "wasd7");
+		Manager m3 = new Manager("xristos dimakis", "xristos@gmail.gr", "rtyhgf8");
+		/* Generating  objects of the class Customer */
+		Customer c1 = new Customer("ioannis dimou", "6914725836", "ioannisd@gmail.gr");
+		Customer c2 = new Customer("ioannis papaioannou", "6978725836", "ioannisp@gmail.gr");
+		Customer c3 = new Customer("markela agtzidi", "6935625836", "markela@gmail.gr");
+		Customer c4 = new Customer("maria papa", "6985425836", "maria@gmail.gr");
+		Customer c5 = new Customer("ioanna syrou", "6914725786", "ioanna@gmail.gr");
+		Customer c6 = new Customer("giorgos papas", "6978725676", "giorgos@gmail.gr");
+		Customer c7 = new Customer("nikolas nikolaou", "6935625326", "nikolas@gmail.gr");
+		Customer c8 = new Customer("konstantinos nikolaou", "6985425850", "konstantinos@gmail.gr");
+		Customer c9 = new Customer("viky papadimitriou", "6933775326", "vicky@gmail.gr");
+		Customer c10 = new Customer("aris xatzis", "6985425850", "aris@gmail.gr");
 	}
 	//** Showing the starting menu.
 	public static void getStartingMenu() {
