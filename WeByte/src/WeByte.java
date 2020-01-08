@@ -20,6 +20,7 @@ public class WeByte {
 		Manager m1 = new Manager("Nikos papadopoulos", "nikos@gmail.gr", "aqwesd7");
 		Manager m2 = new Manager("makis papadopoulos", "makis@gmail.gr", "wasd7");
 		Manager m3 = new Manager("xristos dimakis", "xristos@gmail.gr", "rtyhgf8");
+		Manager m4 = new Manager("t", "t", "t");//Test Object
 		/* Generating  objects of the class Customer */
 		Customer c1 = new Customer("ioannis dimou", "6914725836", "ioannisd@gmail.gr");
 		Customer c2 = new Customer("ioannis papaioannou", "6978725836", "ioannisp@gmail.gr");
@@ -31,6 +32,7 @@ public class WeByte {
 		Customer c8 = new Customer("konstantinos nikolaou", "6985425850", "konstantinos@gmail.gr");
 		Customer c9 = new Customer("viky papadimitriou", "6933775326", "vicky@gmail.gr");
 		Customer c10 = new Customer("aris xatzis", "6985425850", "aris@gmail.gr");
+		Customer c11 = new Customer("c", "1", "c");//Test Object.
 	}
 	//** Showing the starting menu.
 	public static void getStartingMenu() {
@@ -57,6 +59,5 @@ public class WeByte {
 		} else {
 			Manager.login();
 		}
-		sc.close();
 	}
 }
