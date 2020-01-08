@@ -66,7 +66,6 @@ public class Customer extends User {
 				System.out.println("You gave invalid name or phone number. Please try again.\n");
 			}
 		}
-		input.close();
 	}
 	
 	/** Method toString so we can see the object of the class Customer.*/
