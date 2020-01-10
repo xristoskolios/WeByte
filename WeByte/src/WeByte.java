@@ -18,14 +18,14 @@ public class WeByte {
 	
 	/** Loading the objects of class Manager,Customer */
 	public static void loadObjects() {
-		/* Generating objects of the class Manager */
+		/** Generating objects of the class Manager */
 		Manager m1 = new Manager("nikos papadopoulos", "nikos@gmail.gr", "123");
 		Manager m2 = new Manager("makis papadopoulos", "makis@gmail.gr", "456");
 		Manager m3 = new Manager("xristos dimakis", "xristos@gmail.gr", "789");
 		Manager m4 = new Manager("maria iliou", "maria@gmail.gr", "000");
 		Manager m5 = new Manager("m","m","m"); //Test manager
 				
-		/* Generating  objects of the class Customer */
+		/** Generating  objects of the class Customer */
 		Customer c1 = new Customer("ioannis dimou", "6900000000", "ioannisd@gmail.gr");
 		Customer c2 = new Customer("ioannis papaioannou", "6911111111", "ioannisp@gmail.gr");
 		Customer c3 = new Customer("markela agtzidi", "6922222222", "markela@gmail.gr");
