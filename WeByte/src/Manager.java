@@ -52,20 +52,21 @@ public class Manager extends User {
 					+ "Please insert 1 for loyal customers.\n"
 					+ "Please insert 2 for customers who are most likely to be lost.\n"
 					+ "Please insert 3 for the Quality of Mobile Services.\n"
-					+ "Please insert 4 for the Quality of the Internet.\n"
-					+ "Please insert 5 for the Quality of the Satellite TV.\n"
-					+ "Please insert 6 for the Quality of Customer Service.\n"
-					+ "Please insert 7 for Questionnaire evaluation.\n"
+					+ "Please insert 4 for the Quality of Landline Services.\n"
+					+ "Please insert 5 for the Quality of the Internet.\n"
+					+ "Please insert 6 for the Quality of the Satellite TV.\n"
+					+ "Please insert 7 for the Quality of Customer Service.\n"
+					+ "Please insert 8 for Questionnaire evaluation.\n"
 					+ "Please insert 0 to get back to the Starting Menu");
 			b = false;
 			do {
 				try {
 					do {
 						ans = sc.nextInt();
-						if (!(ans >= 0 && ans <= 7)) {
+						if (!(ans >= 0 && ans <= 8)) {
 							System.err.println("Wrong input.Please insert one of the choices.");
 						}
-					} while (!(ans >= 0 && ans <= 7));
+					} while (!(ans >= 0 && ans <= 8));
 					b = true;
 				} catch (InputMismatchException e) {
 					System.err.println("Please type an integer.\nTry again.");
@@ -79,12 +80,14 @@ public class Manager extends User {
 			} else if (ans == 3) {
 				getMobileQResults();
 			} else if (ans == 4) {
-				getInternetQResults();
+				getLandlineQResults();
 			} else if (ans == 5) {
-				getSateliteTVQResults();
+				getInternetQResults();
 			} else if (ans == 6) {
-				getCustomerQResults();
+				getSateliteTVQResults();
 			} else if (ans == 7) {
+				getCustomerQResults();
+			} else if (ans == 8) {
 				getEvaluationQResults();
 			} else {//ans == 0
 				WeByte.getStartingMenu();
@@ -144,15 +147,49 @@ public class Manager extends User {
 		System.out.println("---The Quality of Mobile Services---");
 		int a1 = 0, a2 = 0, a3 = 0, a4 = 0, a5 = 0; //ANSWERS 1,2,3,4,5 FROM QUESTION 2 OF THE QUESTIONNAIRE
 		for (Questionnaire k: Questionnaire.Qs) {
-			if (k.getQ1() == 1) {
+			if (k.getQ2() == 1) {
 				a1++;
-			} else if (k.getQ1() == 2) {
+			} else if (k.getQ2() == 2) {
 				a2++;
-			} else if (k.getQ1() == 3) {
+			} else if (k.getQ2() == 3) {
 				a3++;
-			} else if (k.getQ1() == 4) {
+			} else if (k.getQ2() == 4) {
 				a4++;
 			} else { // k.q2 == 5
+				a5++;
+			}
+		}
+		int n = Questionnaire.n; //Number of questionnaires done.
+		//Otherwise int n = Questionnaire.Qs.length();
+		if (n > 0) {
+			double p1 = (double) 100 * a1 / n; //Rate of answer 1
+			double p2 = (double) 100 * a2 / n; //Rate of answer 2
+			double p3 = (double) 100 * a3 / n; //Rate of answer 3
+			double p4 = (double) 100 * a4 / n; //Rate of answer 4
+			double p5 = (double) 100 * a5 / n; //Rate of answer 5
+		System.out.printf("The rate of asnwer 1 is: %.2f%%.\n",p1);
+		System.out.printf("The rate of asnwer 2 is: %.2f%%.\n",p2);
+		System.out.printf("The rate of asnwer 3 is: %.2f%%.\n",p3);
+		System.out.printf("The rate of asnwer 4 is: %.2f%%.\n",p4);
+		System.out.printf("The rate of asnwer 5 is: %.2f%%.\n",p5);
+		} else { //No questionnaires done by any Customer.
+			System.out.println("No questionnaires have been done yet.");
+		}
+	}
+	
+    public static void getLandlineQResults() {
+    	System.out.println("---The Quality of Landline Services---");
+		int a1 = 0, a2 = 0, a3 = 0, a4 = 0, a5 = 0; //ANSWERS 1,2,3,4,5 FROM QUESTION 2 OF THE QUESTIONNAIRE
+		for (Questionnaire k: Questionnaire.Qs) {
+			if (k.getQ3() == 1) {
+				a1++;
+			} else if (k.getQ3() == 2) {
+				a2++;
+			} else if (k.getQ3() == 3) {
+				a3++;
+			} else if (k.getQ3() == 4) {
+				a4++;
+			} else { // k.q3 == 5
 				a5++;
 			}
 		}
@@ -179,15 +216,15 @@ public class Manager extends User {
 		System.out.println("---The Quality of the Internet---");
 		int a1 = 0, a2 = 0, a3 = 0, a4 = 0, a5 = 0; //ANSWERS 1,2,3,4,5 FROM QUESTION 3 OF THE QUESTIONNAIRE
 		for (Questionnaire k: Questionnaire.Qs) {
-			if (k.getQ3() == 1) {
+			if (k.getQ4() == 1) {
 				a1++;
-			} else if (k.getQ3() == 2) {
+			} else if (k.getQ4() == 2) {
 				a2++;
-			} else if (k.getQ3() == 3) {
+			} else if (k.getQ4() == 3) {
 				a3++;
-			} else if (k.getQ3() == 4) {
+			} else if (k.getQ4() == 4) {
 				a4++;
-			} else { // k.q3 == 5, definitely q3 must be either 1 either 2 either 3 either 4 either 5.
+			} else { // k.q4 == 5, definitely q3 must be either 1 either 2 either 3 either 4 either 5.
 				a5++;
 			}
 		}
@@ -213,15 +250,15 @@ public class Manager extends User {
 		System.out.println("---The Quality of the Satellite TV---");
 		int a1 = 0, a2 = 0, a3 = 0, a4 = 0, a5 = 0; //ANSWERS 1,2,3,4,5 FROM QUESTION 4 OF THE QUESTIONNAIRE
 		for (Questionnaire k: Questionnaire.Qs) {
-			if (k.getQ4() == 1) {
+			if (k.getQ5() == 1) {
 				a1++;
-			} else if (k.getQ4() == 2) {
+			} else if (k.getQ5() == 2) {
 				a2++;
-			} else if (k.getQ4() == 3) {
+			} else if (k.getQ5() == 3) {
 				a3++;
-			} else if (k.getQ4() == 4) {
+			} else if (k.getQ5() == 4) {
 				a4++;
-			} else { // k.q4 == 5, definitely q4 must be either 1 either 2 either 3 either 4 either 5.
+			} else { // k.q5 == 5, definitely q4 must be either 1 either 2 either 3 either 4 either 5.
 				a5++;
 			}
 		}
