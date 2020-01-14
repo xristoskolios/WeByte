@@ -119,7 +119,7 @@ public class Manager extends User {
 			System.out.println("Wrong email or/and password.Please try again.\n");
 		}
 	}
-	
+
 	/** Method to print the loyal customers*/
 		public static void getLoyalQResults() {
 			if (Customer.LoyalCustomers.size() == 0) {
